@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>TypeScript Publish Issue - Repro</h1>
+
+    <p>When using a tsconfig.json file with the following settings: </p>
+    <code>
+{
+"compilerOptions": {
+    "outFile": "app.js"
+    }
+}
+    </code>
+
+    <p>Publishing the solution fails with the following error:</p>
+    <code>
+        Copying file foo.js to obj\Release\Package\PackageTmp\foo.js failed. Could not find file 'foo.js'.
+    </code>
+
+    <p>Guess: The concat settings in the tsconfig.json file are ignored in the VS integration.</p>
+<hr/>
+    <h2>Test Output from app.js:</h2>
+    <p><strong>foo.ts</strong>: <span id="foo"></span></p>
+    <p><strong>fooBar.ts</strong>: <span id="fooBar"></span></p>
+    <script src="app.js" type="text/javascript"></script>
+</body>
+</html>
